@@ -10,6 +10,8 @@ import os
 from keras.datasets import mnist
 from keras.optimizers import Adam
 from PIL import Image
+from keras import backend as K
+K.set_image_dim_ordering('th')
 
 BATCH_SIZE = 32
 NUM_EPOCH = 20
@@ -110,3 +112,5 @@ def train():
 
         generator.save_weights('generator.h5')
         discriminator.save_weights('discriminator.h5')
+
+train()
